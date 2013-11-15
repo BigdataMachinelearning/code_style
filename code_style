@@ -1,0 +1,54 @@
+函数的参数顺序
+输入参数， 然后是输入参数; 输入参数用常引用，输入参数用指针
+void F(const class1 &input, class2* out);
+
+禁止使用全局变量 
+
+关于类
+1. 使用Init函数进行初使化
+2. 单一参数构造函数使用explicit 
+3. struct 和 class的选择， 除非只包含数据的类用struct, 其它用class
+4. 类的声明, public先于private, 函数先于数据
+   类型名， 常量， 构造函数， 析构函数， 函数， 数据成员
+5. 数据成员都是私有的(private)
+
+函数长度 短函数更容易阅读，尽量一个函数不要超过40行
+
+所有引用参数都加const,  void Foo(const string &in, string *out)
+
+类型转换用static_cast<>(), 不用c风格的强制类型转换
+
+尽量不用宏定义  使用内联函数，枚举和const 代替宏定义
+
+不用命默认参数
+
+关于命名
+1. 使用有意义的命名，除非是非常熟悉的缩写，否则不用缩写
+2. 函数和类使用混合命名,即单词首字母大写，  如OpenFile()
+3. 变量用小写字母
+4. 文件名用小写字母，my_useful_class.cc
+5. 常量命名, k加混合字母命名 kDaysInAWeek
+6. 命名空间一率用小写
+7. 枚举类型使用大写字母加下划线 MY_EXCITING_ENUM_VALUE.
+
+文件注释
+1. 版权声明 
+2. 文件初创作者名
+
+文件风格
+1. 每行不超过80字母
+2. 用spaces, 不用tab, 每次缩进用两个空格
+
+函数调用尽量使用一行
+bool retval = DoSomething(argument1, argument2, argument3);
+
+条件和循环语句 "{"和if 放在同一行
+if (condition) { // no spaces inside parentheses
+... // 2 space indent.
+} else { // The else goes on the same line as the closing brace.
+...
+}
+
+引用和指针定义
+char *c;
+const string &str;
