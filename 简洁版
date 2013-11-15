@@ -1,26 +1,6 @@
-函数的参数顺序
-输入参数， 然后是输入参数; 输入参数用常引用，输入参数用指针
-void F(const class1 &input, class2* out);
-
-禁止使用全局变量 
-
-关于类
-1. 使用Init函数进行初使化
-2. 单一参数构造函数使用explicit 
-3. struct 和 class的选择， 除非只包含数据的类用struct, 其它用class
-4. 类的声明, public先于private, 函数先于数据
-   类型名， 常量， 构造函数， 析构函数， 函数， 数据成员
-5. 数据成员都是私有的(private)
-
-函数长度 短函数更容易阅读，尽量一个函数不要超过40行
-
-所有引用参数都加const,  void Foo(const string &in, string *out)
-
-类型转换用static_cast<>(), 不用c风格的强制类型转换
-
-尽量不用宏定义  使用内联函数，枚举和const 代替宏定义
-
-不用命默认参数
+遵守严格的代码规范，看任何一个人写的代码都像自己写的一样，
+可以提高工作效率，利用代码的长期维护，下面是我按照google代码
+规范写的一个简略版本，大家有新的可以继续补充。
 
 关于命名
 1. 使用有意义的命名，除非是非常熟悉的缩写，否则不用缩写
@@ -31,24 +11,40 @@ void F(const class1 &input, class2* out);
 6. 命名空间一率用小写
 7. 枚举类型使用大写字母加下划线 MY_EXCITING_ENUM_VALUE.
 
-文件注释
-1. 版权声明 
-2. 文件初创作者名
+函数
+1. 函数的参数顺序
+输入参数， 然后是输入参数; 输入参数用常引用，输入参数用指针
+void F(const class1 &input, class2* out);
+2. 函数长度 短函数更容易阅读，尽量一个函数不要超过40行
+
+关于类
+1. 使用Init函数进行初使化
+2. 单一参数构造函数使用explicit 
+3. struct 和 class的选择， 除非只包含数据的类用struct, 其它用class
+4. 类的声明, public先于private, 函数先于数据
+   类型名， 常量， 构造函数， 析构函数， 函数， 数据成员
+5. 数据成员都是私有的(private)
 
 文件风格
 1. 每行不超过80字母
 2. 用spaces, 不用tab, 每次缩进用两个空格
 
-函数调用尽量使用一行
-bool retval = DoSomething(argument1, argument2, argument3);
+文件注释
+1. 版权声明 
+2. 文件初创作者名
 
-条件和循环语句 "{"和if 放在同一行
+其它
+1. 禁止使用全局变量 
+2. 所有引用参数都加const,  void Foo(const string &in, string *out)
+3. 类型转换用static_cast<>(), 不用c风格的强制类型转换
+4. 尽量不用宏定义  使用内联函数，枚举和const 代替宏定义
+5. 不用命默认参数
+6. 引用和指针定义, char *c; const string &str;
+   注意"*"和"&"与变量的位置
+7. 条件和循环语句 "{"和if 放在同一行
 if (condition) { // no spaces inside parentheses
 ... // 2 space indent.
 } else { // The else goes on the same line as the closing brace.
 ...
 }
 
-引用和指针定义
-char *c;
-const string &str;
