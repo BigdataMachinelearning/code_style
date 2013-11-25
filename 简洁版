@@ -13,7 +13,7 @@
 
 函数
 1. 函数的参数顺序
-输入参数， 然后是输入参数; 输入参数用常引用，输入参数用指针
+输入参数， 然后是输入参数; 输入参数用常引用，输出参数用指针
 void F(const class1 &input, class2* out);
 2. 函数长度 短函数更容易阅读，尽量一个函数不要超过40行
 
@@ -38,8 +38,8 @@ void F(const class1 &input, class2* out);
 2. 所有引用参数都加const,  void Foo(const string &in, string *out)
 3. 类型转换用static_cast<>(), 不用c风格的强制类型转换
 4. 尽量不用宏定义  使用内联函数，枚举和const 代替宏定义
-5. 不用命默认参数
-6. 引用和指针定义, char *c; const string &str;
+5. 不使用默认参数
+6. 引用和指针定义, char* c; const string &str;
    注意"*"和"&"与变量的位置
 7. 条件和循环语句 "{"和if 放在同一行
 if (condition) { // no spaces inside parentheses
